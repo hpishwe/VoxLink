@@ -129,15 +129,14 @@ Peak process RSS during inference:
 
 5. Performance Comparison
 
-| Metric | Parakeet | IndicConformer |
-|---|---:|---:|
-| Model size | 125.55 MB | 188.44 MB |
-| Load time | 0.622 s | 0.337 s |
-| Average inference | 0.098 s | 3.317 s |
-| RTF | 0.0131 | 0.0576 |
-| Real-time speed | 76.08× | 17.37× |
-| RSS after loading | 331.5 MB | 408.3 MB |
-| Peak RSS during inference | 399.6 MB | 1,189 MB |
+## ASR Model Benchmark — Performance Comparison
+
+| Model | Language | Load Time (s) | Inference Time (s) | RTF ↓ | Real-Time Speed ↑ |
+|---|---|---:|---:|---:|---:|
+| IndicConformer | Telugu | 0.334 | 0.432 | 0.0356 | 28.13× |
+| IndicConformer | Malayalam | 0.390 | 0.865 | 0.0400 | 25.00× |
+| IndicConformer | Marathi | 0.397 | 0.859 | 0.0397 | 25.18× |
+| Parakeet | English | 0.622 | 0.098 | 0.0131 | 76.08× |
 
 Both models run faster than real time on the test machine.
 
