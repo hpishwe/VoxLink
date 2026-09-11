@@ -63,80 +63,15 @@ It was evaluated as the Hindi ASR candidate because it is designed specifically 
 
 ---
 
-4. Offline Inference Benchmark
-
-The models were first evaluated using local WAV files.
-
-#Parakeet
-
-Test audio duration:
-7.435 seconds
-
-Model loading time:
-0.6222 seconds
-
-Average inference time:
-0.0977 seconds
-
-Fastest inference:
-0.0942 seconds
-
-Slowest inference:
-0.1044 seconds
-
-Real-time factor:
-0.0131
-
-Real-time speed:
-76.08×
-
-Process RSS after model loading:
-331.5 MB
-
-Peak process RSS during inference:
-399.6 MB
-
-#IndicConformer
-
-Test audio duration:
-57.626 seconds
-
-Model loading time:
-0.3374 seconds
-
-Average inference time:
-3.3169 seconds
-
-Fastest inference:
-3.1397 seconds
-
-Slowest inference:
-3.4569 seconds
-
-Real-time factor:
-0.0576
-
-Real-time speed:
-17.37×
-
-Process RSS after model loading:
-408.3 MB
-
-Peak process RSS during inference:
-1,189 MB
-
----
-
 5. Performance Comparison
 
-## ASR Model Benchmark — Performance Comparison
-
-| Model | Language | Load Time (s) | Inference Time (s) | RTF ↓ | Real-Time Speed ↑ |
-|---|---|---:|---:|---:|---:|
-| IndicConformer | Telugu | 0.334 | 0.432 | 0.0356 | 28.13× |
-| IndicConformer | Malayalam | 0.390 | 0.865 | 0.0400 | 25.00× |
-| IndicConformer | Marathi | 0.397 | 0.859 | 0.0397 | 25.18× |
-| Parakeet | English | 0.622 | 0.098 | 0.0131 | 76.08× |
+| Model | Language | Audio Duration | Load Time | Inference Time | RTF ↓ | Real-Time Speed ↑ |
+|---|---|---:|---:|---:|---:|---:|
+| IndicConformer | Telugu | 12.137 s | 0.334 s | 0.432 s | 0.0356 | 28.13× |
+| IndicConformer | Malayalam | 21.625 s | 0.390 s | 0.865 s | 0.0400 | 25.00× |
+| IndicConformer | Marathi | 21.625 s | 0.397 s | 0.859 s | 0.0397 | 25.18× |
+| IndicConformer | Hindi | 57.626 s | 0.337 s | 3.3169 s | 0.0576 | 17.37× |
+| Parakeet | English | ~7.48 s* | 0.622 s | 0.098 s | 0.0131 | 76.08× |
 
 Both models run faster than real time on the test machine.
 
