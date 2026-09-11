@@ -71,7 +71,7 @@ It was evaluated as the Hindi ASR candidate because it is designed specifically 
 | IndicConformer | Malayalam | 21.625 s | 0.390 s | 0.865 s | 0.0400 | 25.00× |
 | IndicConformer | Marathi | 21.625 s | 0.397 s | 0.859 s | 0.0397 | 25.18× |
 | IndicConformer | Hindi | 22.453 s | 0.337 s | 0.317 s | 0.0576 | 17.37× |
-| Parakeet | English | 17.48 s* | 0.622 s | 0.098 s | 0.0131 | 76.08× |
+| Parakeet | English | 17.48 s | 0.622 s | 0.098 s | 0.0131 | 76.08× |
 
 Both models run faster than real time on the test machine.
 
