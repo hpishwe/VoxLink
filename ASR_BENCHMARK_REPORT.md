@@ -1,6 +1,6 @@
- Offline ASR Evaluation Report
+ # Offline ASR Evaluation Report
 
-1. Overview
+# 1. Overview
 
 As part of our offline emergency communication project, we evaluated two speech-to-text models that can run locally without depending on an internet connection:
 
@@ -13,7 +13,7 @@ The evaluation focused on model size, loading time, inference speed, memory cons
 
 ---
 
-2. Test Environment
+# 2. Test Environment
 
 The experiments were performed on a MacBook Air using:
 
@@ -31,7 +31,7 @@ The models were tested locally without requiring an external speech recognition 
 
 ---
 
-3. Models
+# 3. Models
 
 3.1 Parakeet TDT-CTC 110M INT8
 
@@ -63,7 +63,7 @@ It was evaluated as the Hindi ASR candidate because it is designed specifically 
 
 ---
 
-4. Performance Comparison
+# 4. Performance Comparison
 
 | Model | Language | Audio Duration | Load Time | Inference Time | RTF ↓ | Real-Time Speed ↑ |
 |---|---|---:|---:|---:|---:|---:|
@@ -81,7 +81,7 @@ The memory measurements represent process RSS rather than model-only memory. The
 
 ---
 
-5. Real Microphone Test
+# 5. Real Microphone Test
 
 The models were also tested using live speech captured from the MacBook Air microphone.
 
@@ -109,7 +109,7 @@ The result was encouraging because the recording was made using the laptop micro
 
 ---
 
-6. Silero VAD + ASR Test
+# 6. Silero VAD + ASR Test
 
 Both models were tested with Sherpa-ONNX's microphone-based offline ASR pipeline using Silero VAD.
 
@@ -150,7 +150,7 @@ The Hindi recognition quality during this live test was strong, and the VAD succ
 
 ---
 
-7. Observations
+# 7. Observations
 
 Several conclusions can be drawn from the tests.
 
@@ -164,7 +164,7 @@ Fourth, Silero VAD works well as the front end for continuous microphone-based r
 
 ---
 
-8. Recommended Model Assignment
+# 8. Recommended Model Assignment
 
 Based on the current tests, the recommended model assignment is:
 
