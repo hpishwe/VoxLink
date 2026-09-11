@@ -1,4 +1,4 @@
-# Offline ASR Evaluation Report
+ Offline ASR Evaluation Report
 
 1. Overview
 
@@ -33,7 +33,7 @@ The models were tested locally without requiring an external speech recognition 
 
 3. Models
 
-#3.1 Parakeet TDT-CTC 110M INT8
+3.1 Parakeet TDT-CTC 110M INT8
 
 The Parakeet model used in this evaluation is the Sherpa-ONNX CTC export of NVIDIA's Parakeet model.
 
@@ -47,7 +47,7 @@ Model size:
 
 It was selected as the primary English ASR candidate because it provides a relatively small model size and very fast inference.
 
-#3.2 IndicConformer Hindi Large INT8
+3.2 IndicConformer Hindi Large INT8
 
 The Hindi model is the AI4Bharat IndicConformer Hindi Large model converted to an INT8 ONNX CTC model for use with Sherpa-ONNX.
 
@@ -63,7 +63,7 @@ It was evaluated as the Hindi ASR candidate because it is designed specifically 
 
 ---
 
-5. Performance Comparison
+4. Performance Comparison
 
 | Model | Language | Audio Duration | Load Time | Inference Time | RTF ↓ | Real-Time Speed ↑ |
 |---|---|---:|---:|---:|---:|---:|
@@ -81,7 +81,7 @@ The memory measurements represent process RSS rather than model-only memory. The
 
 ---
 
-6. Real Microphone Test
+5. Real Microphone Test
 
 The models were also tested using live speech captured from the MacBook Air microphone.
 
@@ -109,7 +109,7 @@ The result was encouraging because the recording was made using the laptop micro
 
 ---
 
-7. Silero VAD + ASR Test
+6. Silero VAD + ASR Test
 
 Both models were tested with Sherpa-ONNX's microphone-based offline ASR pipeline using Silero VAD.
 
@@ -122,7 +122,7 @@ The VAD configuration used:
 - Window size: 512 samples
 - Sample rate: 16 kHz
 
-#Parakeet + VAD
+Parakeet + VAD
 
 The system successfully detected multiple separate speech segments from the microphone and passed them to Parakeet automatically.
 
@@ -150,7 +150,7 @@ The Hindi recognition quality during this live test was strong, and the VAD succ
 
 ---
 
-8. Observations
+7. Observations
 
 Several conclusions can be drawn from the tests.
 
@@ -164,7 +164,7 @@ Fourth, Silero VAD works well as the front end for continuous microphone-based r
 
 ---
 
-9. Recommended Model Assignment
+8. Recommended Model Assignment
 
 Based on the current tests, the recommended model assignment is:
 
@@ -173,44 +173,4 @@ English → Parakeet TDT-CTC 110M INT
 Hindi → IndicConformer Hindi Large INT
 
 The two-model approach is preferable to forcing a single model to handle both languages when language-specific models provide better results and performance.
-
----
-
-10. Proposed Communication Architecture
-
-The evaluated ASR components fit into the planned communication architecture:
-
-Microphone
-    |
-    v
-Silero VAD
-    |
-    v
-Language Selection / Detection
-    |
-    +--------------------+
-    |                    |
-    v                    v
-Parakeet             IndicConformer
-English                  Hindi
-    |                    |
-    +---------+----------+
-              |
-              v
-          Text Message
-              |
-              v
-      Compression / Encoding
-              |
-              v
-        Low-bandwidth Link
-              |
-              v
-        Receiving Device
-              |
-              v
-             TTS
-              |
-              v
-           Speaker
 
