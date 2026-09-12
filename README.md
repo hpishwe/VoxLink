@@ -1,4 +1,3 @@
-````markdown
 # VoxLink — Offline Multilingual Voice Communication
 
 VoxLink is an **offline, low-bandwidth voice communication system** designed for emergency, remote-field, and mission-critical environments where network connectivity may be limited or unreliable.
@@ -27,7 +26,6 @@ Semantic / Text Reconstruction
 Offline TTS
   ↓
 Speaker
-````
 
 ## Current ASR Models
 
